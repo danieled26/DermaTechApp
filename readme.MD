@@ -20,22 +20,25 @@ Image Clustering Approach: We also attempted combining DermNet, SCIN, and HAM100
 ### Main Solution
 
 #### EDA & Model Development Notebooks
-The DermNet Folder > Notebooks contains:
+The Code Folder contains:
 
-- DermNet_EDA_and_Models_part1.ipynb: Initial exploratory data analysis and model trials. Built MobileNet, Vision Transformer (ViT) and YOLO-based Models and evaluated them using training Vs validation accuracy and loss curves. 
+- DermNet_EDA_and_Models_part1.ipynb: Initial exploratory data analysis and model trials. 
 
-- DermNet_VITfinetuned_part3.ipynb: Optimized fine-tuned Google ViT Transformer model using Optuna and hugging face image transformers. The final fine-tuned and optimized ViT Transformer model is saved as model.onnx.
+- MobileNetv2.ipynb, finetuned_dinov2.ipynb (DINOv2) and YOLOv8.ipynb (YOLOv8) contains the models evaluated by training, validation, and test set accuracy. 
+
+- VITfinetuned_dermnet.ipynb: Optimized fine-tuned Google ViT Transformer model using Optuna and hugging face image transformers. The final fine-tuned and optimized ViT Transformer model is saved as model.onnx. 
 
 #### Inference & API Integration: 
 The model is deployed using a Streamlit app (app.py).
 
 #### To run the Streamlit app:
 
-1. Open the folder "DermNet" in VS Code.
-2. Go to terminal and "cd DermNet"
-3. Run command "streamlit run app.py"
-4. Upload an image from the Test Folder or capture a live image.
-5. The prediction result will be displayed along with the model's confidence score.
+1. Download the model_checkpoint release file (model.onnx)
+2. Open the folder "DermNet" in VS Code.
+3. Go to terminal and "cd DermNet"
+4. Run command "streamlit run app.py"
+5. Upload an image from the Test Folder or capture a live image.
+6. The prediction result will be displayed along with the model's confidence score.
 
 A sample image (sample.jpg) is used for testing. The prediction on a sample image is captured in Prediction_on_sample_image.png.
 
